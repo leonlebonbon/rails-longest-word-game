@@ -1,0 +1,14 @@
+<div class="container text-center">
+  <h1>New Game</h1>
+  <ul class="list-inline">
+    <% @letters.flatten.each do |letter| %>
+        <li class="list-inline-item" id="element"><%= letter %></li>
+    <% end %>
+   </ul>
+</div>
+  <form action="<%= score_path %>" class="form-inline" method="POST">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <input type="text" class="form-control" name="input">
+    <input type="submit" class="form-control" name="Play">
+  </form>
+
